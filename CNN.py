@@ -24,12 +24,12 @@ img_height = 150
 img_width = 150
 
 train_datagen = ImageDataGenerator(rescale=1./255,
-                                  # rotation_range=40,
-                                   #width_shift_range=0.2,
-                                   #height_shift_range=0.2,
-                                   #shear_range=0.2,
-                                   #zoom_range=0.2,
-                                   #horizontal_flip=True,
+                                   rotation_range=40,
+                                   width_shift_range=0.2,
+                                   height_shift_range=0.2,
+                                   shear_range=0.2,
+                                   zoom_range=0.2,
+                                   horizontal_flip=True,
                                    fill_mode='nearest')
 
 test_val_datagen = ImageDataGenerator(rescale=1./255)
