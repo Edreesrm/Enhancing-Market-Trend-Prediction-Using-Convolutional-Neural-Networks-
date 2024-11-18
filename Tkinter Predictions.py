@@ -20,7 +20,7 @@ img_height = 150
 img_width = 150
 
  # Replace class names
-class_labels = ['Class0', 'Class1'] 
+class_labels = ['uptrend', 'downtrend'] 
 
 # Create the main window
 root = tk.Tk()
