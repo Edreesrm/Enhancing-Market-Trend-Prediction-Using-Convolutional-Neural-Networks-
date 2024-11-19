@@ -23,6 +23,11 @@ This repository contains a collection of Python scripts that aim to predict the 
    
     Creates a GUI using Tkinter for real-time predictions on buy or sell decisions based on the trained model.
 
+6. Cross-Validation.py
+   
+This script implements cross-validation techniques to evaluate model performance on multiple data splits, ensuring robust and unbiased results. It also helps assess the predictive model's generalization 
+
+capability.
 
 **Libraries required for installation are** 
 
