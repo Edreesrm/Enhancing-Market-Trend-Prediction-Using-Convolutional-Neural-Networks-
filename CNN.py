@@ -24,8 +24,6 @@ img_height = 150
 img_width = 150
 
 train_datagen = ImageDataGenerator(rescale=1./255,
-                                   width_shift_range=0.2,
-                                   height_shift_range=0.2,
                                    shear_range=0.2,
                                    zoom_range=0.2,
                                    fill_mode='nearest')
