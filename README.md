@@ -26,6 +26,10 @@ This repository contains a collection of Python scripts that aim to predict the 
 6. Cross-Validation.py
    
    The cross-validation techniques evaluate model performance on multiple data splits, ensuring robust and unbiased results. It also helps assess the predictive model's generalization capability.
+   
+7. Complexity Analysis.py
+   
+   Analyzes the complexity of a CNN model by calculating total parameters, FLOPs (floating-point operations), memory usage, and inference time. 
 
 **Libraries required for installation are** 
 
