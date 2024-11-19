@@ -19,7 +19,7 @@ This repository contains a collection of Python scripts that aim to predict the 
 
     based on signals from the indicator (SMA).
 
-5. Tkinter Predictions.py
+5. Test for Predictions.py
    
     Creates a GUI using Tkinter for real-time predictions on buy or sell decisions based on the trained model.
 
