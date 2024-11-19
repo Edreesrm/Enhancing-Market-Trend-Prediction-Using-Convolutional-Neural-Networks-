@@ -70,7 +70,7 @@ This repository contains a collection of Python scripts that aim to predict the 
    
 5. **Predictions with GUI**
    
-     Launch the GUI by running Tkinter_Predictions.py to receive real-time buy or sell predictions based on the trained model.
+     Launch the GUI by running Test for Predictions.py to receive real-time buy or sell predictions based on the trained model.
 
 **Future Work**
 
