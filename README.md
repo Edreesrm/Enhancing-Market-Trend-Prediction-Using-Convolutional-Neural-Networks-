@@ -75,6 +75,12 @@ This repository contains a collection of Python scripts that aim to predict the 
    ## Model Download
 
       The pre-trained model can be downloaded from [Google Drive](https://drive.google.com/uc?export=download&id=17ysi_Fld4-VKi67BznHhc0dJ-9CpEW6J).
+      
+      The pre-trained model can be downloaded using the provided script:
+      
+      ```bash
+      pip install gdown
+      python download_model.py
 
 
 **Future Work**
