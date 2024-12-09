@@ -87,7 +87,7 @@ downtrend_dir = os.path.join(output_dir, "downtrend")
 os.makedirs(uptrend_dir, exist_ok=True)
 os.makedirs(downtrend_dir, exist_ok=True)
 window_size=5
-shift_size=1
+shift_size=2
 for i in range(0, len(data) - window_size,shift_size):
     window = data.iloc[i:i+window_size]
     next_candle_close = data['Close'].iloc[i+window_size]
