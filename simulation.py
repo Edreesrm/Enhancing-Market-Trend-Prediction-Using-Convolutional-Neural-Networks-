@@ -21,7 +21,13 @@ from tensorflow.keras.utils import load_img
 import tensorflow as tf
 import shutil
 
+def find_time_index(time,df):
 
+        df=pd.DataFrame(df)
+        index = df.index.get_loc(time)
+        print(index)
+        return index
+    
 gpus = tf.config.list_physical_devices('GPU')
 # if gpus: 
 #     for gpu in gpus:
@@ -36,27 +42,29 @@ logical_gpus = tf.config.list_logical_devices('GPU')
 print(len(gpus), "Physical GPU,", len(logical_gpus), "Logical GPUs")
 
 dd = '/home/hakan/Desktop/Edrees/EURUSD_M15-test.csv'
-initialTime_index=16500
-finalTime_index=16800
+firstDate="2024-03-01 20:45:00"
+lastDate="2024-10-31 20:45:00"
+
 #this part creates images without labels. Because we predict the labels using our cnn model. 
 
 data = pd.read_csv(dd, delimiter=',', index_col='Time', parse_dates=True)
 data['SMA'] = talib.SMA(data['Close'], timeperiod=20)
+initialTime_index=find_time_index(firstDate,data)
+finalTime_index=find_time_index(lastDate,data)
 data=data[initialTime_index:finalTime_index]
 
-output_dir = "test_for_signal"
-shutil.rmtree(output_dir,ignore_errors=True)
-
-os.makedirs(output_dir, exist_ok=True)
-window_size=5
-shift_size=2
-for i in range(0, len(data) - window_size,shift_size):
-    window = data.iloc[i:i+window_size]
-    save_path = os.path.join(output_dir, f"{window.iloc[-1].name}.png")
-    ap = [mpf.make_addplot(window['SMA'], color='blue', secondary_y=False)]
-    mpf.plot(window, type='candle', style='yahoo', addplot=ap, volume=True, axisoff=True, ylabel='',
- savefig=save_path)
-    plt.close()
+# output_dir = "test_for_signal"
+# shutil.rmtree(output_dir,ignore_errors=True)
+# os.makedirs(output_dir, exist_ok=True)
+# window_size=5
+# shift_size=2
+# for i in range(0, len(data) - window_size,shift_size):
+#     window = data.iloc[i:i+window_size]
+#     save_path = os.path.join(output_dir, f"{window.iloc[-1].name}.png")
+#     ap = [mpf.make_addplot(window['SMA'], color='blue', secondary_y=False)]
+#     mpf.plot(window, type='candle', style='yahoo', addplot=ap, volume=True, axisoff=True, ylabel='',
+#  savefig=save_path)
+#     plt.close()
 
 # Create DataFrame
 data = pd.read_csv(dd, delimiter=',', parse_dates=True)
@@ -81,7 +89,7 @@ for name in os.listdir(dataset_path):
     image1 = image1 / 255
     X.append(image1)
 X=np.array(X) 
-model=load_model("chart_classification_model.h5")
+model=load_model("chart_classification_model_W5.h5")
 predictions = model.predict(X)
 
 image_names=os.listdir(dataset_path)
